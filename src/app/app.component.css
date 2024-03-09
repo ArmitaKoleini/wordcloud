@@ -1,3 +1,8 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  
+}
 /* generate button  */
 
 .add-button {
@@ -18,4 +23,30 @@
 
 .add-button:active {
   background-color: #0066a0;
+}
+
+/* words list */
+
+.words-list {
+  height: 100vh;
+  padding: 1.5rem 2.75rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-size: 20px;
+  background: linear-gradient(180deg, #324467, #283142);
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.list-item::-webkit-scrollbar {
+  display: none;
+}
+.list-item {
+  margin: 5px 0;
 }

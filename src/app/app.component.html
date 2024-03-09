@@ -1,7 +1,9 @@
-<div class="word-container">
-  <span *ngFor="let word of words">
-    {{ word.text }}
-  </span>
+<div class="app-container">
+  <div>
+    <button class="add-button" (click)="showRandomWord()">Generate</button>
+    <app-word-cloud #wordcloud [words]="words"></app-word-cloud>
+  </div>
+  <div class="words-list">
+    <div class="list-item" *ngFor="let word of words">{{ word.text }}</div>
+  </div>
 </div>
-<button class="add-button" (click)="showRandomWord()">Generate</button>
-<app-word-cloud #wordcloud [words]="words"></app-word-cloud>
