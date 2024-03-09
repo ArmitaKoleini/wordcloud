@@ -3,24 +3,16 @@
   width: 500px;
   height: 300px;
   margin: 20px auto;
-  padding: 100px;
+  padding: 50px;
   border: 1px solid #ddd;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .word {
-  display: inline-block;
-  font-family: Arial, sans-serif;
-  border-radius: 5px;
-  margin: 5px;
-  text-align: center;
-  white-space: nowrap;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  line-height: 0.1rem;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  max-height: 200px;
 }
 
 .word:nth-of-type(3n + 1) {

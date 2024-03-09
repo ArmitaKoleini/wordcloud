@@ -15,27 +15,26 @@ export class WordCloudComponent {
 
   getRandomColor(): string {
     const colors = [
-      '#f44336',
-      '#e91e63',
-      '#9c27b0',
-      '#673ab7',
-      '#3f51b5',
-      '#2196f3',
-      '#03a9f4',
-      '#00bcd4',
-      '#009688',
-      '#4caf50',
-      '#8bc34a',
-      '#cddc39',
-      '#ffeb3b',
-      '#ffc107',
-      '#ff9800',
-      '#ff5722',
-      '#795548',
-      '#607d8b',
+      'aquamarine',
+      'mediumpurple',
+      'lightblue',
+      'crimson',
+      'hotpink',
+      'palegreen',
+      'indigo',
+      'lightpink',
+      'gold',
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
+  getRandomSize(): string {
+    const sizes = ['10', '40', '60', '20', '30'];
+    return sizes[Math.floor(Math.random() * sizes.length)];
+  }
+
+  // generateRandomNumber() {
+  //   return Math.floor(Math.random() * 400);
+  // }
 
   addWord() {
     const element = document.getElementById('random-word');
@@ -43,7 +42,10 @@ export class WordCloudComponent {
       const divElement = document.createElement('span');
       divElement.innerHTML += this.text;
       const randomColor = this.getRandomColor();
+      const randomSize = this.getRandomSize();
       divElement.style.color = randomColor;
+      divElement.style.fontSize = `${randomSize}px`;
+      divElement.style.float = 'left';
       element.appendChild(divElement);
     }
   }
@@ -58,6 +60,7 @@ export class WordCloudComponent {
       spanElement.textContent = randomWord.text;
       spanElement.style.fontSize = `${randomWord.score}px`;
       spanElement.style.color = randomWord.color;
+      spanElement.style.float = 'left';
       element.appendChild(spanElement);
     }
   }
