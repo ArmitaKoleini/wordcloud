@@ -11,6 +11,15 @@ import { NgFor } from '@angular/common';
 })
 export class WordCloudComponent {
   @Input() words: IWords[] = [];
+  @Input() text: string = '';
+
+  addWord() {
+    const divElement = document.getElementById('random-word');
+    if (divElement) {
+      divElement.innerHTML += this.text;
+      console.log(this.text)
+    }
+  }
 
   generateRandomWord() {
     const randomIndex = Math.floor(Math.random() * this.words.length);
