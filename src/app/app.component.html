@@ -1,10 +1,11 @@
 <div class="main-layout">
   <div class="word-cloud-container">
-    <app-word-cloud #wordcloud [words]="words" [text]="text"></app-word-cloud>
     <div>
-        <input type="text" [(ngModel)]="text" />
-        <button (click)="showAddWord()">Add</button>
+      <input type="text" [(ngModel)]="text" (keydown.enter)="showAddWord()" />
+      <button class="add-button" (click)="showAddWord()">Add</button>
     </div>
+    <app-word-cloud #wordcloud [words]="words" [text]="text"></app-word-cloud>
+
     <button class="add-button" (click)="showRandomWord()">Generate</button>
   </div>
   <div class="words-list">

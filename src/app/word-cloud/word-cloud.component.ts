@@ -17,7 +17,6 @@ export class WordCloudComponent {
     const divElement = document.getElementById('random-word');
     if (divElement) {
       divElement.innerHTML += this.text;
-      console.log(this.text)
     }
   }
 
@@ -31,7 +30,7 @@ export class WordCloudComponent {
       spanElement.textContent = randomWord.text;
       spanElement.style.fontSize = `${randomWord.score}px`;
       spanElement.style.color = randomWord.color;
-      element.appendChild(spanElement); // Add new word as child
+      element.appendChild(spanElement);
     }
   }
 }

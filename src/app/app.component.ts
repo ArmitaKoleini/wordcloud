@@ -8,14 +8,14 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, WordCloudComponent, NgFor,FormsModule],
+  imports: [RouterOutlet, WordCloudComponent, NgFor, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'wordcloud';
   @ViewChild('wordcloud') wordCloud!: WordCloudComponent;
-  text : string = '';
+  text: string = '';
 
   words: IWords[] = [
     { text: 'HTTP', score: 16, color: 'gold' },
@@ -39,7 +39,7 @@ export class AppComponent {
     this.wordCloud.generateRandomWord();
   }
 
-  showAddWord() { 
+  showAddWord() {
     this.wordCloud.addWord();
   }
 }
