@@ -42,8 +42,8 @@ export class WordCloudComponent {
     if (element) {
       const divElement = document.createElement('span');
       divElement.innerHTML += this.text;
-      const randomColor = this.getRandomColor()
-      divElement.style.color = randomColor ;
+      const randomColor = this.getRandomColor();
+      divElement.style.color = randomColor;
       element.appendChild(divElement);
     }
   }
