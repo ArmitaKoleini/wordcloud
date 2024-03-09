@@ -1,7 +1,12 @@
-.app-container {
+.main-layout {
   display: flex;
-  flex-direction: row;
-  
+}
+
+.word-cloud-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 3rem 0 0 0;
 }
 /* generate button  */
 
