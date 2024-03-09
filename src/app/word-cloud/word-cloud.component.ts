@@ -28,7 +28,7 @@ export class WordCloudComponent {
     return colors[Math.floor(Math.random() * colors.length)];
   }
   getRandomSize(): string {
-    const sizes = ['10', '40', '60', '20', '30'];
+    const sizes = ['16', '32', '8', '24', '40'];
     return sizes[Math.floor(Math.random() * sizes.length)];
   }
 

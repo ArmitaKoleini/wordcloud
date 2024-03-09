@@ -13,6 +13,8 @@
 .word {
   max-width: 400px;
   max-height: 200px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* float: left; */
 }
 
 .word:nth-of-type(3n + 1) {
