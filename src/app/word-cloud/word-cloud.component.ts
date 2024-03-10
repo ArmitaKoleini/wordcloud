@@ -27,22 +27,25 @@ export class WordCloudComponent {
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
+
   getRandomSize(): string {
     const sizes = ['16', '32', '8', '24', '40'];
     return sizes[Math.floor(Math.random() * sizes.length)];
   }
 
+  createRandomizedSpanElement(text: string) {
+    const spanElement = document.createElement('span');
+    spanElement.textContent = text;
+    spanElement.style.fontSize = `${this.getRandomSize()}px`;
+    spanElement.style.color = this.getRandomColor();
+    spanElement.style.float = 'left';
+    return spanElement;
+  }
+
   addWord() {
     const element = document.getElementById('random-word');
     if (element) {
-      const divElement = document.createElement('span');
-      divElement.innerHTML += this.text;
-      const randomColor = this.getRandomColor();
-      const randomSize = this.getRandomSize();
-      divElement.style.color = randomColor;
-      divElement.style.fontSize = `${randomSize}px`;
-      divElement.style.float = 'left';
-      element.appendChild(divElement);
+      element.appendChild(this.createRandomizedSpanElement(this.text));
     }
   }
 
