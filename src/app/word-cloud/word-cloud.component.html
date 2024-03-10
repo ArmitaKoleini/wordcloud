@@ -1,10 +1,35 @@
 <div class="wordcloud">
-  <span
-    *ngFor="let word of words"
-    [style.color]="word.color"
-    [style.fontSize.px]="word.score"
-    class="word"
-    >{{ word.text }}</span
-  >
-  <div id="random-word" class="word"></div>
+  <div>
+    <div class="backdrop" (click)="closeModal()"></div>
+    <div class="modal">
+      <div class="modal-items">
+        <input type="text" [(ngModel)]="editedUser" />
+        <div class="modal-buttons">
+          <button
+            class="accept-btn"
+            (click)="onEdit()"
+            (click)="closeModal()"
+            type="button"
+            [disabled]="editedUser == ''"
+          >
+            <span>Save</span>
+          </button>
+          <button class="close-btn" (click)="closeModal()" type="button">
+            <span>Cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="random-word">
+      <span
+        *ngFor="let word of words; let index = index"
+        [style.color]="word.color"
+        [style.fontSize.px]="word.score"
+        class="word"
+        (click)="openModal(index)"
+        >{{ word.text }}</span
+      >
+    </div>
+  </div>
 </div>

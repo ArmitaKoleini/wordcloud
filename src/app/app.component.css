@@ -10,7 +10,7 @@
 .word-cloud-container {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 5rem;
   width: 100%;
 }
 /*  button  */
