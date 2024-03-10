@@ -47,19 +47,4 @@ export class WordCloudComponent {
     }
   }
 
-  getRandomWord() {
-    const randomIndex = Math.floor(Math.random() * this.words.length);
-    return this.words.splice(randomIndex, 1)[0];
-  }
-
-  generateRandomWord() {
-    const randomWord = this.getRandomWord();
-    const element = document.getElementById('random-word');
-    if (element) {
-      const spanElement = document.createElement('span');
-      spanElement.textContent = randomWord.text;
-      spanElement.style.cssText = `font-size: ${randomWord.score}px; color: ${randomWord.color}; float: left;`;
-      element.appendChild(spanElement);
-    }
-  }
 }

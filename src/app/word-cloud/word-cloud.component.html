@@ -1,3 +1,9 @@
 <div class="wordcloud">
+  <span
+    *ngFor="let word of words"
+    [style.color]="word.color"
+    [style.fontSize.px]="word.score"
+    >{{ word.text }}</span
+  >
   <div id="random-word" class="word"></div>
 </div>
