@@ -32,10 +32,6 @@ export class WordCloudComponent {
     return sizes[Math.floor(Math.random() * sizes.length)];
   }
 
-  // generateRandomNumber() {
-  //   return Math.floor(Math.random() * 400);
-  // }
-
   addWord() {
     const element = document.getElementById('random-word');
     if (element) {
