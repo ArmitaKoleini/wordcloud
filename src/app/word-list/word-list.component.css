@@ -25,15 +25,3 @@
     background-color: #ccc;
   }
   
-
-/* 
-.list-item {
-  flex-grow: 1;
-  overflow-y: auto;
-}
-.list-item::-webkit-scrollbar {
-  display: none;
-}
-.list-item {
-  margin: 5px 0;
-} */

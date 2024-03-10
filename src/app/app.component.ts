@@ -20,11 +20,11 @@ export class AppComponent {
   words: IWords[] = [
     { text: 'HTTP', score: 16, color: 'goldenrod' },
     { text: 'Ember', score: 8, color: 'firebrick' },
-    { text: 'Sass', score: 20, color: 'darkolivegreen' },
+    { text: 'Sass', score: 20, color: 'hotpink' },
     { text: 'HTML', score: 32, color: 'coral' },
     { text: 'FlexBox', score: 24, color: 'mediumpurple' },
     { text: 'API', score: 16, color: 'royalblue' },
-    { text: 'VueJS', score: 20, color: 'dodgerblue' },
+    { text: 'VueJS', score: 20, color: 'mediumseagreen' },
     { text: 'Grid', score: 24, color: 'gold' },
     { text: 'Rest', score: 12, color: 'darkred' },
     { text: 'JavaScript', score: 36, color: 'cornflowerblue' },
