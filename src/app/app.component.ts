@@ -2,13 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { WordCloudComponent } from './word-cloud/word-cloud.component';
 import { IWords } from './word-interface';
-import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { WordListComponent } from './word-list/word-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, WordCloudComponent, NgFor, FormsModule],
+  imports: [RouterOutlet, WordCloudComponent, WordListComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

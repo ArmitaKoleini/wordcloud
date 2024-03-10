@@ -1,0 +1,38 @@
+/* words list */
+
+.words-list {
+  height: 50vh;
+  padding: 2rem 4rem;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  color: #404040;
+  border: 1px solid #d4d4d4;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.def-words {
+    font-weight: bold;
+}
+.indicator {
+    width: 200px;
+    height: 1px;
+    margin: 10px 0;
+    background-color: #ccc;
+  }
+  
+
+/* 
+.list-item {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.list-item::-webkit-scrollbar {
+  display: none;
+}
+.list-item {
+  margin: 5px 0;
+} */
