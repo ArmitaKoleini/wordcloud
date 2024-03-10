@@ -13,6 +13,7 @@
 .word {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   line-height: 25px;
+  float: left;
 }
 /*  
 #random-word span:nth-of-type(3n + 1) {

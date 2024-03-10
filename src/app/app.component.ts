@@ -34,7 +34,6 @@ export class AppComponent {
     { text: 'Less', score: 12, color: 'mediumpurple' },
   ];
 
-
   showAddWord() {
     this.wordCloud.addWord();
   }
