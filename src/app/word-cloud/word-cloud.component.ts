@@ -36,9 +36,7 @@ export class WordCloudComponent {
   createRandomizedSpanElement(text: string) {
     const spanElement = document.createElement('span');
     spanElement.textContent = text;
-    spanElement.style.fontSize = `${this.getRandomSize()}px`;
-    spanElement.style.color = this.getRandomColor();
-    spanElement.style.float = 'left';
+    spanElement.style.cssText = `font-size: ${this.getRandomSize()}px; color: ${this.getRandomColor()}; float: left;`;
     return spanElement;
   }
 
@@ -51,8 +49,7 @@ export class WordCloudComponent {
 
   getRandomWord() {
     const randomIndex = Math.floor(Math.random() * this.words.length);
-    const randomWord = this.words.splice(randomIndex, 1)[0];
-    return randomWord;
+    return this.words.splice(randomIndex, 1)[0];
   }
 
   generateRandomWord() {
@@ -61,9 +58,7 @@ export class WordCloudComponent {
     if (element) {
       const spanElement = document.createElement('span');
       spanElement.textContent = randomWord.text;
-      spanElement.style.fontSize = `${randomWord.score}px`;
-      spanElement.style.color = randomWord.color;
-      spanElement.style.float = 'left';
+      spanElement.style.cssText = `font-size: ${randomWord.score}px; color: ${randomWord.color}; float: left;`;
       element.appendChild(spanElement);
     }
   }
