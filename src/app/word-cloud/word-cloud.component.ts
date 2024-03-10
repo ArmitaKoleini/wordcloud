@@ -46,13 +46,14 @@ export class WordCloudComponent {
     }
   }
 
-  generateRandomWord() {
+  getRandomWord() {
     const randomIndex = Math.floor(Math.random() * this.words.length);
-    const randomWord = this.words[randomIndex];
-    if (randomIndex !== -1) {
-      this.words.splice(randomIndex, 1);
-    }
+    const randomWord = this.words.splice(randomIndex, 1)[0];
+    return randomWord;
+  }
 
+  generateRandomWord() {
+    const randomWord = this.getRandomWord();
     const element = document.getElementById('random-word');
     if (element) {
       const spanElement = document.createElement('span');
