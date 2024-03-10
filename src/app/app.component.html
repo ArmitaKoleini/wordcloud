@@ -9,6 +9,6 @@
     <button class="add-button" (click)="showRandomWord()">Generate</button>
   </div>
   <div class="words-list">
-    <div class="list-item" *ngFor="let word of words">{{ word.text }}</div>
+    <div class="list-item" *ngFor="let word of words; let i = index ">{{ word.text }}</div>
   </div>
 </div>

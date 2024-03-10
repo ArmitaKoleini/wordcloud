@@ -53,6 +53,10 @@ export class WordCloudComponent {
   generateRandomWord() {
     const randomIndex = Math.floor(Math.random() * this.words.length);
     const randomWord = this.words[randomIndex];
+    const randomIndex2 = this.words.indexOf(randomWord);
+    if (randomIndex2 !== -1) {
+      this.words.splice(randomIndex2, 1);
+    }
 
     const element = document.getElementById('random-word');
     if (element) {

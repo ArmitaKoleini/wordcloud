@@ -3,7 +3,7 @@
   width: 500px;
   height: 300px;
   margin: 20px auto;
-  padding: 50px;
+  padding: 20px;
   border: 1px solid #ddd;
   position: relative;
   overflow: hidden;
@@ -11,10 +11,9 @@
 }
 
 .word {
-  max-width: 400px;
-  max-height: 200px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   /* float: left; */
+  line-height: 30px;
 }
 
 .word:nth-of-type(3n + 1) {
