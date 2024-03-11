@@ -42,7 +42,7 @@ export class WordsService {
   }
 
   public getRandomSize(): string {
-    const sizes = ['16', '32', '8', '24', '40'];
+    const sizes = ['16', '32', '12', '24', '40'];
     return sizes[Math.floor(Math.random() * sizes.length)];
   }
   public addWord(text: string) {

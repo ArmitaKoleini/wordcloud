@@ -11,9 +11,10 @@
 }
 
 .word {
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  line-height: 25px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  line-height: 20px;
   float: left;
+  padding: 3px;
 }
 /*  
 #random-word span:nth-of-type(3n + 1) {
