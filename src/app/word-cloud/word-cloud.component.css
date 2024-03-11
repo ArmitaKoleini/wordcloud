@@ -21,8 +21,8 @@
 .word:hover {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
-/*  
-#random-word span:nth-of-type(3n + 1) {
-  opacity: 0.7;
-  transform: rotate(90deg);
-} */
+
+#random-word :nth-child(5n) {
+  opacity: 0.5;
+  /* transform: rotate(-90deg); */
+}
