@@ -15,6 +15,11 @@
   line-height: 20px;
   float: left;
   padding: 3px;
+  cursor: pointer;
+}
+
+.word:hover {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 /*  
 #random-word span:nth-of-type(3n + 1) {
