@@ -15,50 +15,39 @@ export class WordCloudComponent {
   @Input() text: string = '';
   editedUser: string = '';
   indexToEdit: number = 0;
+  uniqueIndexCounter: number = 15;
 
   constructor(private renderer: Renderer2) {}
 
   getRandomColor(): string {
     const colors = [
-      'aquamarine',
       'mediumpurple',
-      'lightblue',
-      'crimson',
+      'lightgreen',
+      'darkblue',
+      'royalblue',
+      'teal',
+      'cornflowerblue',
+      'darkred',
+      'mediumseagreen',
+      'coral',
+      'firebrick',
       'hotpink',
-      'palegreen',
-      'indigo',
-      'lightpink',
-      'gold',
+      'goldenrod',
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  getRandomSize(): string {
-    const sizes = ['16', '32', '8', '24', '40'];
-    return sizes[Math.floor(Math.random() * sizes.length)];
+  getRandomSize(): number {
+    return Math.floor(Math.random() * 30) + 10;
   }
 
-  createRandomizedSpanElement(text: string) {
-    const spanElement = this.renderer.createElement('span');
-    this.renderer.addClass(spanElement, 'word');
-    this.renderer.setProperty(spanElement, 'textContent', text);
-    this.renderer.setStyle(
-      spanElement,
-      'font-size',
-      `${this.getRandomSize()}px`
-    );
-    this.renderer.setStyle(spanElement, 'color', this.getRandomColor());
-    this.renderer.setStyle(spanElement, 'float', 'left');
-    this.renderer.setProperty(spanElement, 'click', this.openModal.bind(this));
-    return spanElement;
-  }
-
-  addWord() {
-    const element = document.getElementById('random-word');
-    if (element) {
-      const spanElement = this.createRandomizedSpanElement(this.text);
-      element.appendChild(spanElement);
-    }
+  addWord(text: string) {
+    const wordObject = {
+      text,
+      score: +this.getRandomSize(),
+      color: this.getRandomColor(),
+    };
+    this.words.push(wordObject);
   }
 
   public openModal(index: number) {
@@ -67,6 +56,7 @@ export class WordCloudComponent {
     const backDropElement = document.querySelector('.backdrop');
     this.renderer.setStyle(backDropElement, 'display', 'block');
     this.indexToEdit = index;
+    console.log(this.indexToEdit);
   }
   public closeModal() {
     const modalElement = document.querySelector('.modal');
