@@ -1,3 +1,4 @@
+import { WordsService } from './../words.service';
 import { Component, Input, Renderer2 } from '@angular/core';
 import { IWords } from '../word-interface';
 import { NgFor } from '@angular/common';
@@ -11,44 +12,14 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './word-cloud.component.css',
 })
 export class WordCloudComponent {
-  @Input() words: IWords[] = [];
   @Input() text: string = '';
+  words: IWords[] = [];
   editedUser: string = '';
   indexToEdit: number = 0;
   uniqueIndexCounter: number = 15;
 
-  constructor(private renderer: Renderer2) {}
-
-  public getRandomColor(): string {
-    const colors = [
-      'mediumpurple',
-      'lightgreen',
-      'darkblue',
-      'royalblue',
-      'teal',
-      'cornflowerblue',
-      'darkred',
-      'mediumseagreen',
-      'coral',
-      'firebrick',
-      'hotpink',
-      'goldenrod',
-    ];
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
-
-  public getRandomSize(): string {
-    const sizes = ['16', '32', '8', '24', '40'];
-    return sizes[Math.floor(Math.random() * sizes.length)];
-  }
-
-  public addWord(text: string) {
-    const wordObject = {
-      text,
-      score: +this.getRandomSize(),
-      color: this.getRandomColor(),
-    };
-    this.words.push(wordObject);
+  constructor(private renderer: Renderer2, private WordsService: WordsService) {
+    this.words = this.WordsService.words;
   }
 
   public openModal(index: number) {
@@ -67,10 +38,10 @@ export class WordCloudComponent {
   }
 
   public onEdit() {
-    this.words[this.indexToEdit].text = this.editedUser;
+    this.WordsService.words[this.indexToEdit].text = this.editedUser;
   }
 
   public onDelete() {
-    this.words[this.indexToEdit].text = '';
+    this.WordsService.words[this.indexToEdit].text = '';
   }
 }

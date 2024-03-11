@@ -1,6 +1,6 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { WordsService } from './../words.service';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { WordCloudComponent } from '../word-cloud/word-cloud.component';
 
 @Component({
   selector: 'app-control',
@@ -11,9 +11,10 @@ import { WordCloudComponent } from '../word-cloud/word-cloud.component';
 })
 export class ControlComponent {
   @Input() text: string = '';
-  @ViewChild('wordcloud') wordCloud!: WordCloudComponent;
+
+  constructor(private WordsService: WordsService) {}
 
   showAddWord() {
-    this.wordCloud.addWord(this.text);
+    this.WordsService.addWord(this.text);
   }
 }
