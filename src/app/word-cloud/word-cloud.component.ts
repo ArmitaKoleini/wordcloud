@@ -19,7 +19,7 @@ export class WordCloudComponent {
 
   constructor(private renderer: Renderer2) {}
 
-  getRandomColor(): string {
+  public getRandomColor(): string {
     const colors = [
       'mediumpurple',
       'lightgreen',
@@ -37,12 +37,12 @@ export class WordCloudComponent {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  getRandomSize(): string {
+  public getRandomSize(): string {
     const sizes = ['16', '32', '8', '24', '40'];
     return sizes[Math.floor(Math.random() * sizes.length)];
   }
 
-  addWord(text: string) {
+  public addWord(text: string) {
     const wordObject = {
       text,
       score: +this.getRandomSize(),
@@ -70,7 +70,7 @@ export class WordCloudComponent {
     this.words[this.indexToEdit].text = this.editedUser;
   }
 
-  onDelete() {
+  public onDelete() {
     this.words[this.indexToEdit].text = '';
   }
 }

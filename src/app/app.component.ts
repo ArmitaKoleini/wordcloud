@@ -3,17 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { WordCloudComponent } from './word-cloud/word-cloud.component';
 import { IWords } from './word-interface';
 import { FormsModule } from '@angular/forms';
+import { ControlComponent } from './control/control.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, WordCloudComponent, FormsModule],
+  imports: [RouterOutlet, WordCloudComponent, ControlComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'wordcloud';
-  @ViewChild('wordcloud') wordCloud!: WordCloudComponent;
   text: string = '';
 
   words: IWords[] = [
@@ -33,8 +33,4 @@ export class AppComponent {
     { text: 'Cache', score: 24, color: 'lightgreen' },
     { text: 'Less', score: 12, color: 'mediumpurple' },
   ];
-
-  showAddWord() {
-    this.wordCloud.addWord(this.text);
-  }
 }
