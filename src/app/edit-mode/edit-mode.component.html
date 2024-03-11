@@ -1,0 +1,34 @@
+<div>
+  <div class="backdrop" (click)="closeModal()"></div>
+  <div class="modal">
+    <div class="modal-items">
+      <input type="text" [(ngModel)]="editedUser" />
+      <div class="modal-buttons">
+        <button
+          class="button button-save"
+          (click)="onEdit()"
+          (click)="closeModal()"
+          type="button"
+          [disabled]="editedUser == ''"
+        >
+          <span>Save</span>
+        </button>
+        <button
+          class="button button-delete"
+          (click)="onDelete()"
+          (click)="closeModal()"
+          type="button"
+        >
+          <span>Delete</span>
+        </button>
+        <button
+          class="button button-cancel"
+          (click)="closeModal()"
+          type="button"
+        >
+          <span>Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

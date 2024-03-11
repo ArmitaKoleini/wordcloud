@@ -16,5 +16,6 @@ export class ControlComponent {
 
   showAddWord() {
     this.WordsService.addWord(this.text);
+    this.text = '';
   }
 }
