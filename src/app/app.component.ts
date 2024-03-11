@@ -36,6 +36,5 @@ export class AppComponent {
 
   showAddWord() {
     this.wordCloud.addWord(this.text);
-    this.text = '';
   }
 }

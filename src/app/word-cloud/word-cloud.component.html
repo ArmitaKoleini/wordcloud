@@ -6,7 +6,7 @@
         <input type="text" [(ngModel)]="editedUser" />
         <div class="modal-buttons">
           <button
-            class="accept-btn"
+            class="button button-save"
             (click)="onEdit()"
             (click)="closeModal()"
             type="button"
@@ -14,7 +14,10 @@
           >
             <span>Save</span>
           </button>
-          <button class="close-btn" (click)="closeModal()" type="button">
+          <button class="button button-delete" (click)="onDelete()" (click)="closeModal()" type="button">
+            <span>Delete</span>
+          </button>
+          <button class="button button-cancel" (click)="closeModal()" type="button">
             <span>Cancel</span>
           </button>
         </div>

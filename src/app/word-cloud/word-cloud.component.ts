@@ -37,8 +37,9 @@ export class WordCloudComponent {
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
-  getRandomSize(): number {
-    return Math.floor(Math.random() * 30) + 10;
+  getRandomSize(): string {
+    const sizes = ['16', '32', '8', '24', '40'];
+    return sizes[Math.floor(Math.random() * sizes.length)];
   }
 
   addWord(text: string) {
@@ -56,7 +57,7 @@ export class WordCloudComponent {
     const backDropElement = document.querySelector('.backdrop');
     this.renderer.setStyle(backDropElement, 'display', 'block');
     this.indexToEdit = index;
-    console.log(this.indexToEdit);
+    this.editedUser = '';
   }
   public closeModal() {
     const modalElement = document.querySelector('.modal');
@@ -67,6 +68,9 @@ export class WordCloudComponent {
 
   public onEdit() {
     this.words[this.indexToEdit].text = this.editedUser;
-    this.editedUser = '';
+  }
+
+  onDelete() {
+    this.words[this.indexToEdit].text = '';
   }
 }
