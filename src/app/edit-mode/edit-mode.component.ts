@@ -35,8 +35,7 @@ export class EditModeComponent {
   public onEdit() {
     this.WordsService.words[this.indexToEdit].text = this.editedUser;
   }
-
   public onDelete() {
-    this.WordsService.words[this.indexToEdit].text = '';
+    this.WordsService.words.splice(this.indexToEdit, 1);
   }
 }
